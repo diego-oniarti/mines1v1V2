@@ -50,7 +50,7 @@ function setup() {
 
     document.getElementById("gameKey").innerText = lobby;
 
-    const wsUri = `ws://127.0.0.1:2357/lobby/join?lobby=${lobby}`;
+    const wsUri = `ws://${location.host}/lobby/join?lobby=${lobby}`;
     ws = new WebSocket(wsUri);
     ws.binaryType = "arraybuffer";
 
