@@ -48,7 +48,7 @@ func createLobby(opts utils.GameOptions) {
 	if opts.Mode == utils.Vs {
 		game = new1v1(opts)
 	}else{
-		// New single
+		game = newSingle(opts)
 	}
 
 	newLobby := utils.Lobby{

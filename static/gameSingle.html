@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Mines1v1 - Match</title>
-    <link href="css/style.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/p5.js"></script>
-    <script src="scripts/game.js"></script>
-    
-    <style>
-        :root {
-            --bg: #0f172a;
-            --panel: #1e293b;
-            --accent: #38bdf8;
-            --text-dim: #94a3b8;
-        }
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Mines1v1 - Match</title>
+        <link href="css/style.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/p5.js"></script>
+        <script src="scripts/gameSingle.js"></script>
+
+        <style>
+:root {
+    --bg: #0f172a;
+    --panel: #1e293b;
+    --accent: #38bdf8;
+    --text-dim: #94a3b8;
+}
 
         body, html {
             margin: 0;
@@ -93,24 +93,20 @@
             font-size: 0.8rem;
             transition: color 0.2s;
         }
-        
+
         .back-btn:hover {
             color: white;
         }
-    </style>
-</head>
-<body>
+        </style>
+    </head>
+    <body>
 
-    <header>
-        <a href="/" class="back-btn">← LEAVE</a>
-        <div class="info-pill">
-            <span class="label">Lobby Key</span>
-            <span id="gameKey"></span>
-        </div>
-    </header>
+        <header>
+            <a href="/" class="back-btn">← LEAVE</a>
+        </header>
 
-    <div id="game">
+        <div id="game">
         </div>
 
-</body>
+    </body>
 </html>

@@ -1,6 +1,4 @@
-/**
- * @param {HTMLFormElement} form 
- */
+/** @param {HTMLFormElement} form */
 function createLobby(form) {
     const params = new URLSearchParams();
 
@@ -20,8 +18,15 @@ function createLobby(form) {
             alert("Post failed! Try again.");
             return;
         }
-        resp.text() .then(data=>{
-            window.location.href = `game.html?lobby=${data}`;
+        resp.text().then(data=>{
+            switch (form.mode.value) {
+                case "1v1":
+                    window.location.href = `game1v1.html?lobby=${data}`;
+                    break;
+                case "singleplayer":
+                    window.location.href = `gameSingle.html?lobby=${data}`;
+                    break;
+            }
         }).catch(e=>console.log(e));
     });
 

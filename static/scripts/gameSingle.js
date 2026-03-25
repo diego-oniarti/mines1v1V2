@@ -48,8 +48,6 @@ function setup() {
     let params = new URLSearchParams(document.location.search);
     let lobby = params.get("lobby");
 
-    document.getElementById("gameKey").innerText = lobby;
-
     const wsUri = `ws://${location.host}/lobby/join?lobby=${lobby}`;
     ws = new WebSocket(wsUri);
     ws.binaryType = "arraybuffer";
@@ -102,6 +100,7 @@ function drawTimer(c, T=1000) {
 function drawBoard() {
     image(bg, 0, 0);
     textSize(edge*0.8);
+    textAlign(CENTER, CENTER);
     noStroke();
     for (let y=0; y<board.length; y++) {
         for (let x=0; x<board[y].length; x++) {
@@ -235,11 +234,7 @@ function handleFirstMove(view) {
         i+=5
     }
 
-    if (Pid==1) {
-        state = states.yourTurn
-    }else{
-        state = states.theirTurn
-    }
+    state = states.yourTurn
     spinnerStart = Date.now();
 }
 
@@ -295,14 +290,6 @@ function handleGame(view) {
     }
 
     if (!flag) {
-        switch (state) {
-            case states.yourTurn:
-                state = states.theirTurn
-                break;
-            case states.theirTurn:
-                state = states.yourTurn
-                break;
-        }
         spinnerStart = Date.now()
     }
 

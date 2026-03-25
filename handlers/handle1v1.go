@@ -143,9 +143,7 @@ func (h *handler1v1) Join(conn *websocket.Conn) {
 
 				select {
 				case h.resetTimer <- true:
-					log.Println("Reset sent")
 				default:
-					log.Println("Reset NOT sent")
 				}
 			}
 		} else { // flag
